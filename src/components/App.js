@@ -16,7 +16,7 @@ export const App = () => {
 			<main>	
 				<h1>Arborist</h1>
 				<h2>Select your tree</h2>
-				<button className={isAddingItem ? 'btn-danger' : ''} onClick={() => setIsAddingItem(!isAddingItem)}>{isAddingItem ? 'Cancel' : 'Add Item'}</button>
+				<button className={isAddingItem ? 'btn-danger' : ''} onClick={() => setIsAddingItem(!isAddingItem)}>{isAddingItem ? 'Cancel' : 'Add Tree'}</button>
 				{ isAddingItem && <ItemAdd setIsAddingItem={setIsAddingItem}/> }
 				<Routes>
 					<Route path="/" element={<ItemsList items={items} />} />

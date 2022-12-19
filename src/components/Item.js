@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const Item = ({item, children, editButton}) => {
+export const Item = ({item, children, editButton, clickable}) => {
   const isOnListPage = !children;
   
   const navigate = useNavigate();
@@ -20,10 +20,10 @@ export const Item = ({item, children, editButton}) => {
     }
   };
 
-  return <div className="item-container">
+  return <div className="item-container" onClick={clickable ? handleNavigate : null}>
     <h3>{item.name}</h3>
     <div className="price-box">
-      <button onClick={handleNavigate}>{children ? '< Back' : 'Details'}</button>
+      <button onClick={handleNavigate}>{children ? '< Tree List' : 'Details'}</button>
       {children && <button className="btn-danger" onClick={handleDelete}>Delete</button> }
       {editButton}
     </div>

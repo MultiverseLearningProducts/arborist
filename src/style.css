@@ -84,8 +84,10 @@ button {
 }
 
 img {
-  max-width:40%;
-  padding: .5rem;
+  object-fit: cover;
+  width: calc(100% - .25rem);
+  height: calc(100% - 3.5rem);
+  margin-top: .5rem;
   background-color: white;
   border-radius: .5rem;
 }

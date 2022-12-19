@@ -8,7 +8,7 @@ export const ItemForm = ({cancelFunction, item, handleSubmit, setItem, method}) 
     image
   } = item;
 
-  const formTitle = method === 'add' ? 'Add Item' : 'Edit Item';
+  const formTitle = method === 'add' ? 'Add Tree' : 'Edit Tree';
 
 
   return <div className="item-container" id="item-add">
