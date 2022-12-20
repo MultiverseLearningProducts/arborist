@@ -56,6 +56,7 @@ button {
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: 1px 1px 8px lightgrey;
+  overflow: hidden;
 }
 
 #item-add {
