@@ -1,13 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const Item = ({item, children, editButton, clickable}) => {
+export const Item = ({items, setItems, item, children, editButton, clickable}) => {
   const isOnListPage = !children;
   
   const navigate = useNavigate();
 
-  const handleDelete = async () => {
-    console.log('delete', item)
+  const handleDelete = async (id) => {
+    const newItems = items.filter(item => item.id != id);
+    setItems(newItems);
+    navigate('/');
   };
 
   const handleNavigate = () => {
@@ -24,7 +26,7 @@ export const Item = ({item, children, editButton, clickable}) => {
     <h3>{item.name}</h3>
     <div className="price-box">
       <button onClick={handleNavigate}>{children ? '< Tree List' : 'Details'}</button>
-      {children && <button className="btn-danger" onClick={handleDelete}>Delete</button> }
+      {children && <button className="btn-danger" onClick={() => handleDelete(item.id)}>Delete</button> }
       {editButton}
     </div>
     {children}

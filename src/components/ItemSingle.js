@@ -3,7 +3,7 @@ import { Item } from './Item';
 import { ItemEdit } from './ItemEdit';
 import { useParams } from 'react-router-dom';
 
-export const ItemSingle = ({items}) => {
+export const ItemSingle = ({items, setItems}) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const { id } = useParams();
@@ -21,7 +21,7 @@ export const ItemSingle = ({items}) => {
         ? <ItemEdit item={item} setIsEditing={setIsEditing}/>
         : null
     }
-    <Item item={item} editButton={editButton}>
+    <Item item={item} editButton={editButton} items={items} setItems={setItems}>
       <h3>Species: {item.species}</h3>
       <div>{item.description}</div>
     </Item>

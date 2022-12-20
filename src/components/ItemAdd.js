@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ItemForm } from './ItemForm';
 
-export const ItemAdd = ({setIsAddingItem}) => {
+export const ItemAdd = ({items, setItems}) => {
+  const navigate = useNavigate();
   const initialItem = {
     name: '',
     species: '',
@@ -12,11 +14,11 @@ export const ItemAdd = ({setIsAddingItem}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('submit', item);
+    setItems([...items, item]);
+    navigate('/');
   };
 
   return <ItemForm
-    cancelFunction={setIsAddingItem}
     item={item}
     handleSubmit={handleSubmit}
     setItem={setItem}

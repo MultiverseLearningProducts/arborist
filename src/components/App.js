@@ -1,26 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ItemSingle } from './ItemSingle';
 import { ItemsList } from './ItemsList';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import trees from '../trees';
 import { ItemAdd } from './ItemAdd';
+import { Header } from './Header';
+import { AccountForm } from './AccountForm';
 
 export const App = () => {
 
 	const [items, setItems] = useState(trees);
-	const [isAddingItem, setIsAddingItem] = useState(false);
+	const [user, setUser] = useState(undefined);
 
 	return (
 		<Router>
 			<main>	
-				<h1>Arborist</h1>
-				<h2>Select your tree</h2>
-				<button className={isAddingItem ? 'btn-danger' : ''} onClick={() => setIsAddingItem(!isAddingItem)}>{isAddingItem ? 'Cancel' : 'Add Tree'}</button>
-				{ isAddingItem && <ItemAdd setIsAddingItem={setIsAddingItem}/> }
+				<Header items={items} user={user} setUser={setUser}/>
 				<Routes>
 					<Route path="/" element={<ItemsList items={items} />} />
-          <Route path="/trees/:id" element={<ItemSingle items={items}/>} />
+					<Route path="/add" element={<ItemAdd/>} />
+          <Route path="/trees/:id" element={<ItemSingle items={items} setItems={setItems}/>} />
+					<Route path="/login" element={<AccountForm user={user} setUser={setUser} />} />
 				</Routes>
 			</main>
 		</Router>

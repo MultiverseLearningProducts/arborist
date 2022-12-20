@@ -13,9 +13,10 @@ main {
   justify-content: center;
 }
 
-h1 {
+h1, h1>a {
   font-family: 'Courgette', cursive;
   color: #20bd79;
+  text-decoration: none;
 }
 
 h2 {
@@ -49,7 +50,7 @@ button {
   flex-direction: column;
   width: 25rem;
   height: 25rem;
-  margin: 0.5rem;
+  margin: 2rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.1);
@@ -90,4 +91,74 @@ img {
   margin-top: .5rem;
   background-color: white;
   border-radius: .5rem;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 1px 1px 8px lightgrey;
+  padding: 1rem;
+}
+
+/* account container */
+header #account-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#account-container>* {
+  margin: 0 .5rem;
+}
+
+/* account icon */
+header #account {
+  position: relative;
+}
+
+/* account dropdown */
+header aside {
+  display: none;
+  position: absolute;
+  right: .5rem;
+  top: 2rem;
+  min-width: 7rem;
+  padding: .25rem;
+  animation: fadeIn .35s;
+}
+
+/* show account on hover */
+header #account-container:hover + aside {
+  display: block;
+}
+header aside:hover {
+  display: block;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* account dropdown inside */
+.account-box {
+  background-color: #fff;
+  box-shadow: 1px 1px 8px lightgrey;
+  border-radius: .25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: .25rem;
+}
+
+.account-box>* {
+  margin: .25rem;
 }
