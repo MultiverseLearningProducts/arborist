@@ -13,7 +13,6 @@ export const AccountBox = ({user, setUser, items}) => {
     {
       ! user
         ? <>
-            <div>Logged out</div>
             <button onClick={() => navigate('/login')}>Log In</button>
         </>
         : <>

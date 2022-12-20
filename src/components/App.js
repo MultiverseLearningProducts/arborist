@@ -20,7 +20,7 @@ export const App = () => {
 				<Routes>
 					<Route path="/" element={<ItemsList items={items} />} />
 					<Route path="/add" element={<ItemAdd/>} />
-          <Route path="/trees/:id" element={<ItemSingle items={items} setItems={setItems}/>} />
+          <Route path="/trees/:id" element={<ItemSingle items={items} setItems={setItems} user={user}/>} />
 					<Route path="/login" element={<AccountForm user={user} setUser={setUser} />} />
 				</Routes>
 			</main>
