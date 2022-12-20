@@ -10,7 +10,6 @@ export const ItemForm = ({cancelFunction, item, handleSubmit, setItem, method}) 
 
   const formTitle = method === 'add' ? 'Add Tree' : 'Edit Tree';
 
-
   return <div className="item-container" id="item-add">
     <h3>{formTitle}</h3>
     <form className='form-input-list' onSubmit={handleSubmit}>
@@ -29,4 +28,3 @@ export const ItemForm = ({cancelFunction, item, handleSubmit, setItem, method}) 
     </form>
   </div>
 }
-	

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 export const ItemEdit = ({item: originalItem, items, setItems, setIsEditing}) => {
   const [item, setItem] = useState(originalItem);
-
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -29,4 +28,3 @@ export const ItemEdit = ({item: originalItem, items, setItems, setIsEditing}) =>
     method={'edit'}
   />
 }
-	

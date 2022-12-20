@@ -2,10 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const Item = ({items, setItems, item, children, editButton, clickable, user}) => {
-  const isOnListPage = !children;
-  
   const navigate = useNavigate();
-
+  
+  const isOnListPage = !children;
   const showDeleteAndEdit = user && children;
 
   const handleDelete = async (id) => {
@@ -15,7 +14,6 @@ export const Item = ({items, setItems, item, children, editButton, clickable, us
   };
 
   const handleNavigate = () => {
-
     if (isOnListPage) {
       navigate(`trees/${item.id}`);
     } else {
@@ -38,4 +36,3 @@ export const Item = ({items, setItems, item, children, editButton, clickable, us
     <img src={item.image} alt={item.title} />
   </div>
 }
-	

@@ -24,4 +24,3 @@ export const Header = ({items, user, setUser}) => {
     </aside>
   </header>
 }
-	

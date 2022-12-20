@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { ItemForm } from './ItemForm';
 
 export const ItemAdd = ({items, setItems}) => {
-  const navigate = useNavigate();
   const initialItem = {
     name: '',
     species: '',
@@ -11,6 +10,8 @@ export const ItemAdd = ({items, setItems}) => {
     image: ''
   };
   const [item, setItem] = useState(initialItem);
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,4 +26,3 @@ export const ItemAdd = ({items, setItems}) => {
     method={'add'}
   />
 }
-	

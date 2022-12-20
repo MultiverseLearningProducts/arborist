@@ -12,8 +12,6 @@ export const ItemSingle = ({items, setItems, user}) => {
   const editButton = isEditing
     ? <button className="btn-danger" onClick={() => setIsEditing(false)}>Cancel</button>
     : <button onClick={() => setIsEditing(true)}>Edit</button>
-  
-  
 
   return <>
     {
@@ -27,4 +25,3 @@ export const ItemSingle = ({items, setItems, user}) => {
     </Item>
   </>
 }
-	
