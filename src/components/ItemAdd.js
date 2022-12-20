@@ -15,6 +15,11 @@ export const ItemAdd = ({items, setItems}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // populate defaults
+    item.id = items.length + 1;
+    item.image = item.image || 'https://cdn-icons-png.flaticon.com/512/46/46564.png';
+    
     setItems([...items, item]);
     navigate('/');
   };
