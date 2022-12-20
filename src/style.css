@@ -11,6 +11,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 h1, h1>a {
@@ -50,7 +51,7 @@ button {
   flex-direction: column;
   width: 25rem;
   height: 25rem;
-  margin: 2rem;
+  margin: 1rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.1);
@@ -59,7 +60,6 @@ button {
 
 #item-add {
   width: calc(75% - 1rem);
-  margin: 0 calc(25% / 2);
 }
 
 .form-input-list {

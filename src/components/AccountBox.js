@@ -17,7 +17,7 @@ export const AccountBox = ({user, setUser, items}) => {
         </>
         : <>
           <div>Welcome, {user.name}</div>
-          <div>You have {items.length} items listed</div>
+          <div>You have <b>{items.length} trees</b> listed</div>
           <button onClick={handleLogout}>Log Out</button>
         </>
     }

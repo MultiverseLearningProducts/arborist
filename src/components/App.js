@@ -15,8 +15,8 @@ export const App = () => {
 
 	return (
 		<Router>
+			<Header items={items} user={user} setUser={setUser}/>
 			<main>	
-				<Header items={items} user={user} setUser={setUser}/>
 				<Routes>
 					<Route path="/" element={<ItemsList items={items} />} />
 					<Route path="/add" element={<ItemAdd/>} />
